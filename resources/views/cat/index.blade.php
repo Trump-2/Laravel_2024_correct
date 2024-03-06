@@ -23,7 +23,7 @@
                     <a class="nav-link" href="{{route('dogs.index')}}">Dog</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link disabled" href="{{route('cats.index')}}">Cat</a>
+                    <a class="nav-link" href="{{route('cats.index')}}">Cat</a>
                 </li>
             </ul>
         </div>
@@ -33,9 +33,9 @@
         <h1>Cat list</h1>
         <div class="text-end">
 
-            <!-- 第一個連結 route() 裡面的名子是由 資料夾名稱 + cat controller 底下的 create 函數 -->
+            <!-- 第一個連結 route() 裡面的名子是由 資料夾名稱 ( 複數行 ) + cat controller 底下的 create 函數 -->
             <a href="{{route('cats.create')}}">Add</a>&nbsp;
-            <a href="{{route('apple')}}">single</a>
+            <a href="{{route('cats.multiple')}}">single</a>
         </div>
         <table class="table table-striped">
             <thead>

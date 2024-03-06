@@ -11,7 +11,7 @@ class DogController extends Controller
      */
     public function index()
     {
-        //
+        return view('dog.index');
     }
 
     /**

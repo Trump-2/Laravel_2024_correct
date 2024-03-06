@@ -28,5 +28,5 @@ Route::get('/', function () {
 Route::resource('/dogs', DogController::class);
 
 
-Route::get('/cats_single', [CatController::class, 'single'])->name('apple');
+Route::get('/cats_multiple', [CatController::class, 'multiple'])->name('cats.multiple');
 Route::resource('/cats', CatController::class);
