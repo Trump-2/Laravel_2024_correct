@@ -35,10 +35,10 @@ class CatController extends Controller
     public function store(Request $request)
     {
         // dd('hello cat store');
-        // dd($request);
-        $input =  $request->except('_token');
-        dd($input);
-        dd("hello cat store");
+        dd($request);
+        // $input =  $request->except('_token');
+        // dd($input);
+        // dd("hello cat store");
     }
 
     /**
@@ -54,7 +54,7 @@ class CatController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        dd("hello $id");
     }
 
     /**

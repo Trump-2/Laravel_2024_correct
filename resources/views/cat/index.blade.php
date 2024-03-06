@@ -50,23 +50,17 @@
                     <td>John</td>
                     <td>Doe</td>
                     <td>
-                        <button>編輯</button><button>刪除</button>
+                        <a href='{{route('cats.edit',['cat' => 2])}}'>編輯</a><a>刪除</a>
                     </td>
                 </tr>
                 <tr>
                     <td>Mary</td>
                     <td>Moe</td>
                     <td>
-                        <button>編輯</button><button>刪除</button>
+                        <a href='{{route('cats.edit',['cat' => 2])}}'>編輯</a><a>刪除</a>
                     </td>
                 </tr>
-                <tr>
-                    <td>July</td>
-                    <td>Dooley</td>
-                    <td>
-                        <button>編輯</button><button>刪除</button>
-                    </td>
-                </tr>
+
             </tbody>
         </table>
     </div>
