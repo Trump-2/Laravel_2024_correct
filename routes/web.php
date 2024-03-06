@@ -2,7 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DogController;
-
 use App\Http\Controllers\CatController;
 /*
 |--------------------------------------------------------------------------
@@ -21,6 +20,11 @@ Route::get('/', function () {
     // 轉址用
     return redirect('/cats');
 });
+
+
+// Route::get('/child', function () {
+//     return view('child');
+// });
 
 
 
