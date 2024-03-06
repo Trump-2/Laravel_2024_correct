@@ -7,6 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- 載入自訂的 css 檔案，寫法一 -->
+    <!-- <link rel="stylesheet" href="http://final.com/css/style.css"> -->
+
+    <!-- 載入自訂的 css 檔案，寫法二 -->
+    <!-- <link rel="stylesheet" href="{{asset("css/style.css")}}"> -->
 </head>
 
 <body>
@@ -25,7 +30,7 @@
     </nav>
 
     <div class="container mt-3">
-        <h2>Cat list</h2>
+        <h1>Cat list</h1>
         <div class="text-end">
 
             <!-- 第一個連結 route() 裡面的名子是由 資料夾名稱 + cat controller 底下的 create 函數 -->

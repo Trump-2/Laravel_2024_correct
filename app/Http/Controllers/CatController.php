@@ -11,6 +11,11 @@ class CatController extends Controller
      */
     public function index()
     {
+
+        $url = asset("css/style.css");
+        // dd($url);
+
+
         // cat 是資料夾名稱，然後底下有一個檔案叫做 index.blade.php；中間用 . 連結
         return view('cat.index');
     }
