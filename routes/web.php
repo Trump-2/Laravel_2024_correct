@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DogController;
 use App\Http\Controllers\CatController;
+use App\Http\Controllers\StudentController;
+use App\Http\Controllers\MobileController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -34,3 +36,10 @@ Route::resource('/dogs', DogController::class);
 
 Route::get('/cats_multiple', [CatController::class, 'multiple'])->name('cats.multiple');
 Route::resource('/cats', CatController::class);
+
+// student 學生
+Route::resource('/students', StudentController::class);
+
+
+// mobile 學生
+Route::resource('/mobiles', MobileController::class);
