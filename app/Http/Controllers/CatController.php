@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
+// 取得 model
+use App\Models\Cat;
+
 class CatController extends Controller
 {
     /**
@@ -17,10 +20,13 @@ class CatController extends Controller
 
         // 這個 get() 等同於 sql 中的 select；沒有參數的情況下等於 [ select * from table ]
         // $data = DB::table('cats')->get();
+        // $data['cats'] = DB::select("select * from cats");
+        // $data['dogs'] = DB::select("select * from dogs");
+        // $data['test'] = 123;
 
-        $data['cats'] = DB::select("select * from cats");
-        $data['dogs'] = DB::select("select * from dogs");
-        $data['test'] = 123;
+
+        // 使用 model 的方式來查詢 cats 資料表中的資料
+        $data['cats'] = Cat::all();
 
 
         // $url = asset("css/style.css");
