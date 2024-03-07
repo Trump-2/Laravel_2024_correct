@@ -16,8 +16,11 @@ class CatController extends Controller
 
 
         // 這個 get() 等同於 sql 中的 select；沒有參數的情況下等於 [ select * from table ]
-        $data = DB::table('cats')->get();
-        dd($data);
+        // $data = DB::table('cats')->get();
+
+        $data['cats'] = DB::select("select * from cats");
+        $data['dogs'] = DB::select("select * from dogs");
+        $data['test'] = 123;
 
 
         // $url = asset("css/style.css");
@@ -25,7 +28,9 @@ class CatController extends Controller
 
 
         // cat 是資料夾名稱，然後底下有一個檔案叫做 index.blade.php；中間用 . 連結
-        return view('cat.index');
+
+        // 後面那個陣列是可以傳到前端的內容，這裡我自定義 selfDefine，如此前端存取此內容時就會寫為 $selfDefine
+        return view('cat.index', ['selfDefine' => $data]);
     }
 
     /**

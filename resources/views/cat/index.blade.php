@@ -29,6 +29,13 @@
         </div>
     </nav>
 
+    @php
+
+    dd($selfDefine['cats']);
+    //dd($selfDefine['test']);
+
+    @endphp
+
     <div class="container mt-3">
         <h1>Cat list</h1>
         <div class="text-end">
