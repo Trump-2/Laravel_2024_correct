@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 class CatController extends Controller
@@ -12,7 +13,14 @@ class CatController extends Controller
     public function index()
     {
 
-        $url = asset("css/style.css");
+
+
+        // 這個 get() 等同於 sql 中的 select；沒有參數的情況下等於 [ select * from table ]
+        $data = DB::table('cats')->get();
+        dd($data);
+
+
+        // $url = asset("css/style.css");
         // dd($url);
 
 
@@ -25,8 +33,13 @@ class CatController extends Controller
      */
     public function create()
     {
-        //
-        return view('cat.create');
+        // insert( ) 會新增一筆資料進到 cats 資料表中
+        DB::table('cats')->insert([
+            'name' => 'klay',
+            'tel' => '0977888999'
+        ]);
+
+        // return view('cat.create');
     }
 
     /**
@@ -34,11 +47,6 @@ class CatController extends Controller
      */
     public function store(Request $request)
     {
-        // dd('hello cat store');
-        dd($request);
-        // $input =  $request->except('_token');
-        // dd($input);
-        // dd("hello cat store");
     }
 
     /**

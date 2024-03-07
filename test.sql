@@ -31,3 +31,11 @@ CREATE TABLE `laravel`.`dog` (
     `name` TEXT NULL COMMENT '姓名' , 
     `num` INT(10) NULL COMMENT '數量' , 
     `date` DATE NULL COMMENT '日期' , PRIMARY KEY (`id`)) ENGINE = InnoDB;
+
+
+INSERT INTO `dogs`(`id`, `name`, `address`, `mobile`, `created_at`, `updated_at`) 
+VALUES ('','Linda','台中市','888','','')
+INSERT INTO `dogs`(`id`, `name`, `address`, `mobile`, `created_at`, `updated_at`) 
+VALUES ('','Allen','台中市','666','','')
+INSERT INTO `dogs`(`id`, `name`, `address`, `mobile`, `created_at`, `updated_at`) 
+VALUES ('','Murray','台中市','555','','')
