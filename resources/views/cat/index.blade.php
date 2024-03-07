@@ -31,7 +31,7 @@
 
     @php
 
-    dd($selfDefine['cats']);
+    //dd($selfDefine['cats']);
     //dd($selfDefine['test']);
 
     @endphp
@@ -49,24 +49,24 @@
                 <tr>
                     <th>Id</th>
                     <th>Name</th>
+                    <th>tel</th>
                     <th>Operate</th>
                 </tr>
             </thead>
             <tbody>
+
+                @foreach($dataOK['cats'] as $idx => $item)
                 <tr>
-                    <td>John</td>
-                    <td>Doe</td>
+                    <td>{{$idx + 1}}</td>
+                    <td>{{$item->name}}</td>
+                    <td>{{$item->tel}}</td>
                     <td>
-                        <a href='{{route('cats.edit',['cat' => 2])}}'>編輯</a>&nbsp;&nbsp;<a href=''>刪除</a>
+                        <a href='{{route('cats.edit',['cat' => $item->id])}}'>編輯</a>&nbsp;&nbsp;<a href=''>刪除</a>
                     </td>
                 </tr>
-                <tr>
-                    <td>Mary</td>
-                    <td>Moe</td>
-                    <td>
-                        <a href='{{route('cats.edit',['cat' => 2])}}'>編輯</a>&nbsp;&nbsp;<a href=''>刪除</a>
-                    </td>
-                </tr>
+
+                @endforeach
+
 
             </tbody>
         </table>

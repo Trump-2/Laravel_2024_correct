@@ -30,7 +30,7 @@ class CatController extends Controller
         // cat 是資料夾名稱，然後底下有一個檔案叫做 index.blade.php；中間用 . 連結
 
         // 後面那個陣列是可以傳到前端的內容，這裡我自定義 selfDefine，如此前端存取此內容時就會寫為 $selfDefine
-        return view('cat.index', ['selfDefine' => $data]);
+        return view('cat.index', ['dataOK' => $data]);
     }
 
     /**
@@ -39,12 +39,8 @@ class CatController extends Controller
     public function create()
     {
         // insert( ) 會新增一筆資料進到 cats 資料表中
-        DB::table('cats')->insert([
-            'name' => 'klay',
-            'tel' => '0977888999'
-        ]);
 
-        // return view('cat.create');
+        return view('cat.create');
     }
 
     /**
@@ -52,6 +48,16 @@ class CatController extends Controller
      */
     public function store(Request $request)
     {
+        // 這個變數儲存著欄位名稱和欄位值
+        $input = $request->except('_token');
+        $now = now();
+
+        $input['created_at'] = $now;
+        $input['updated_at'] = $now;
+        $input['tel'] = "555";
+
+        DB::table('cats')->insert($input);
+        return redirect()->route('cats.index');
     }
 
     /**
